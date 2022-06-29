@@ -1,0 +1,57 @@
+.navbar ul{
+    list-style: none;
+    
+}
+
+.navbar ul:first-child{
+    margin-left: 50px;
+}
+
+.navbar ul li{
+    position: relative;
+    cursor: pointer;
+    float: left;
+}
+
+.navbar ul li a{
+    font-size: 20px;
+    padding: 20px;
+    color: #333;
+    display: block;
+}
+
+.navbar ul li a:hover{
+    color: aliceblue;
+    background-color: #333;
+}
+
+.navbar ul li ul{
+    position: absolute;
+    left: 0px;
+    width: 200px;
+    background-color: #fff;
+}
+
+.navbar ul li ul{
+    position: absolute;
+    left: 0px;
+    width: 200px;
+    background-color: #fff;
+    display: none;
+}
+
+.navbar ul li ul li{
+    width: 100%;
+    border-top: 1px solid rgb(0, 0, 0, 0.1);
+}
+
+.navbar ul li ul li ul{
+    left : 200px;
+    top: 0;
+}
+
+.navbar ul li:focus-within > ul,
+.navbar ul li:hover > ul{
+    display: initial;
+}
+

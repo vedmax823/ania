@@ -1,5 +1,7 @@
 
-import './App.css';
+
+import './style/main.css';
+
 
 function App() {
   return (

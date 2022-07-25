@@ -15,7 +15,7 @@ export const userSlice = createSlice({
     },
     reducers:{
         setUser :(state, user) => {
-            state.data = {isLogin : true, isAdmin : user.role === 'ADMIN', ...user.payload}
+            state.data = {isLogin : true, isAdmin : user.payload.role === 'ADMIN', ...user.payload}
         },
         destroyUser : state => {
             state.data = {isLogin : false, isAdmin : false}

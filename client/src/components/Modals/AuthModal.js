@@ -19,7 +19,7 @@ const AuthModal = ({show, handleClose}) => {
                 os : "macOS",
                 device : "MACBOOK1"
             }}
-            console.log(email, password)
+            //console.log(email, password)
             const data = await loginUser(loginObj)
             //console.log(jwt_decode(data.accessToken))
             const user = jwt_decode(data.accessToken)

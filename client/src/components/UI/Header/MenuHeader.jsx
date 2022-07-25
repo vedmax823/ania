@@ -2,19 +2,24 @@ import React from 'react';
 import './navbar.css'
 import { Link } from 'react-router-dom';
 import { ADMIN_ROUTE, LOGIN_ROUTE, MAINPAGE_ROUTE } from '../../../utils/constants';
-//import { getCategories } from '../../http/interfaceAPI';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { getCategories } from '../../../http/categories';
+import MenuList from './MenuList';
+
 
 
 
 
 const MenuHeader = () => {
-    // const [menuList, setMenuList] = useState([])
-    // useEffect(() => {
-    //     getCategories().then(data => {
-    //         setMenuList(data)
-    //         console.log(data)
-    //     })
-    // }, [])
+    const [menuList, setMenuList] = useState([])
+    useEffect(() => {
+        getCategories().then(data => {
+            setMenuList(data)
+        })
+    }, [])
+
+    
 
     
     
@@ -22,12 +27,9 @@ const MenuHeader = () => {
     return (
         <div className='menu__header'>
             <nav className = "navbar">
-                <ul>
-                    {/* {
-                        menuList.map(item => {
-                            return <li key={item.id}><Link to={MAINPAGE_ROUTE} key={item.id}>{item.name}</Link></li>
-                        })
-                    } */}
+            <MenuList categories={menuList} />
+                {/* <ul>
+                    
                     <li>
                         <Link to={LOGIN_ROUTE}>Категории +</Link>
                         <ul>
@@ -48,11 +50,8 @@ const MenuHeader = () => {
 
                     <li><Link to={MAINPAGE_ROUTE}>Начинки</Link></li>
                     <li><Link to={ADMIN_ROUTE}>Чизкейки</Link></li>
-                    <li><Link to="/subcategory">Подкатегория</Link></li>
-                    <li><Link to="category">чизкейки</Link></li>
-                    <li><Link to="dashboard">Дашбоард</Link></li>
-                    <li><Link to="team">Дашбоард2</Link></li>
-                </ul>
+                    
+                </ul> */}
             </nav>
             
         </div>

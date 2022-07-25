@@ -26,6 +26,7 @@
 }
 
 .navbar ul li ul{
+    padding-left: 0px;
     position: absolute;
     left: 0px;
     width: 200px;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import Header from '../components/UI/Header/Header';
 
 const CategoryPage = () => {
     const location = useLocation()
@@ -8,6 +9,7 @@ const CategoryPage = () => {
     
     return (
         <div>
+            <Header />
             {category}
         </div>
     );

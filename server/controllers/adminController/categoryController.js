@@ -10,9 +10,19 @@ class CategoryController {
             if (!errors.isEmpty()){
                 return next(ApiError.BadRequest('Помилка при створенні нової категорії', errors))
             }
-            const {name, id_father} = req.body
-            const category = await CategoryServices.createCategory(name, id_father)
+            const {name, id_father, link} = req.body
+            const category = await CategoryServices.createCategory(name, id_father, link)
             res.json(category)
+        }
+        catch(e){
+            next(e)
+        }
+    }
+
+    async getCategotyList(req, res, next){
+        try{
+            const category_list = await CategoryServices.getCategotyList()
+            res.json(category_list)
         }
         catch(e){
             next(e)
